@@ -29,10 +29,10 @@
 	<input type="hidden" name="x_signature" value="${pdict.Signature}" />
 	<button type="submit" style="display:none;"></button>
 </form>
-<scrip>
+<script>
      jQuery(document).ready(function() {
        jQuery('.hummsubmit').submit();
 })
-</scrip>
+</script>
 
 </isdecorate>
