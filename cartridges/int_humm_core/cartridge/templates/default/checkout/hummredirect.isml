@@ -15,7 +15,7 @@
 <div class="redirect-text">
 	<p>${Resource.msg('redirect.notification.humm','humm',null)}</p><p class="notify-message">${Resource.msg('redirect.message','humm',null)}</p>
 </div>
-<form method="post" action="${gatewayURL}">
+<form method="post" action="${gatewayURL}" class="hummsubmit">
 	<input type="hidden" name="x_account_id" value="${merchantID}" />
 	<input type="hidden" name="x_amount" value="${pdict.orderObject.getTotalGrossPrice().toNumberString()}" />
 	<input type="hidden" name="x_currency" value="${pdict.orderObject.getCurrencyCode()}" />
@@ -27,13 +27,12 @@
 	<input type="hidden" name="x_url_cancel" value="${URLUtils.https('Cancel-HandleResponse','order_id',pdict.orderObject.orderNo,'order_token',pdict.orderObject.getOrderToken())}" />
 	<input type="hidden" name="x_url_complete" value="${URLUtils.https('Complete-HandleResponse','order_id',pdict.orderObject.orderNo,'order_token',pdict.orderObject.getOrderToken())}" />
 	<input type="hidden" name="x_signature" value="${pdict.Signature}" />
-	<button type="submit" class=hummsubmit style="display:none;"></button>
+	<button type="submit" style="display:none;"></button>
 </form>
-<script>
-	jQuery(function(){
-		jQuery('.hummsubmit').click();
-	});
-</script>
-
+<scrip>
+     jQuery(document).ready(function() {
+       jQuery('.hummsubmit').submit();
+})
+</scrip>
 
 </isdecorate>
